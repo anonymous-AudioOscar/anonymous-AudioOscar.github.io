@@ -1,0 +1,547 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio-Oscar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Use Lucide Icons via CDN for pure static usage -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              'academic-bg': '#F8F9FA',
+              'academic-ink': '#1A1A1B',
+              'academic-accent': '#2563EB',
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="antialiased">
+    
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md border-b border-black/5">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="font-bold tracking-tight text-xl">Audio-Oscar</div>
+        <div class="flex items-center gap-6 text-sm font-medium opacity-70">
+          <a href="#abstract" class="hover:opacity-100 transition-opacity">Abstract</a>
+          <a href="#method" class="hover:opacity-100 transition-opacity">Method</a>
+          <a href="#demos" class="hover:opacity-100 transition-opacity">Demos</a>
+          <a href="#comparisons" class="hover:opacity-100 transition-opacity">Comparisons</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="abstract" class="max-w-5xl mx-auto px-6 pt-48 pb-24 space-y-16">
+        <div class="space-y-10 text-center md:text-left">
+          <div class="space-y-4">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-gray-900">
+              Audio-Oscar: <br/>
+              <span class="text-blue-600 font-semibold text-xl md:text-2xl">A Multi-Agent System for Complex Audio Scene Generation, Orchestration, and Refinement</span>
+            </h1>
+            <!-- Authors Section -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-lg font-medium text-gray-700">
+              <span class="hover:text-blue-600 transition-colors cursor-default">Audio-Oscar Team<sup>1</sup></span>
+            </div>
+            <p class="text-sm opacity-50 font-medium"><sup>1</sup>Anonymous</p>
+          </div>
+          
+          <div class="space-y-6">
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4 text-sm font-semibold">
+              <a href="#" onclick="alert('Anonymous Submission — Under Review'); return false;" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-full hover:scale-105 hover:shadow-lg hover:-translate-y-0.5 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>Paper</span>
+              </a>
+              <a href="#" onclick="alert('Anonymous Submission — Under Review'); return false;" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-full hover:scale-105 hover:shadow-lg hover:-translate-y-0.5 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>Code</span>
+              </a>
+              <a href="#" onclick="alert('Anonymous Submission — Under Review'); return false;" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-full hover:scale-105 hover:shadow-lg hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
+                <i data-lucide="play-circle" class="w-4 h-4"></i>
+                <span>Demos</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abstract Card -->
+        <div class="bg-white/80 backdrop-blur-sm border border-black/5 rounded-2xl p-8 md:p-10 shadow-sm space-y-4 leading-relaxed">
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900">Abstract</h3>
+          <p class="text-gray-700">In recent years, audio generation has made significant progress in tasks such as text-to-speech (TTS), text-to-audio (TTA) and text-to-music(TTM). However, generating long-form and controllable audio from complex audio scene descriptions remains a significant challenge, as such scenes often require coordinated speech, sound effects, music, songs, temporal structure, and post-production. In this work, we introduce <b>Audio-Oscar</b>, a multi-agent framework for generating audio from complex descriptions. Audio-Oscar coordinates a set of specialist agents, each responsible for a different aspect of the audio scene, including role modeling and voice design, speech generation, fine-grained timeline planning, model selection, non-speech generation, and audio post-production. Audio-Oscar further incorporates feedback-driven refinement. In addition, to address the lack of suitable benchmarks for evaluating audio generation from complex audio scene descriptions, we construct <b>ASG-Bench</b>(Audio Scene Generation Benchmark), which includes both scene descriptions paired with reference audio and text-only scene descriptions. Each scene is annotated with target audio events and temporal statements to evaluate whether the generated audio faithfully realizes the required scene content and temporal structure. Experimental results show that Audio-Oscar can effectively generate audio that matches complex scene descriptions. Project samples are available at this website. Our code will be released soon.</p>
+        </div>
+      </section>
+
+      <!-- Method Overview -->
+      <section id="method" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center space-y-2 mb-8">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 italic">Method Overview</h2>
+          <p class="opacity-50">Multi-agent collaborative framework for complex audio generation.</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-sm border border-black/5 rounded-3xl p-8 md:p-12 shadow-sm">
+          <img src="assets/method.jpg" class="w-full rounded-2xl" alt="Method Overview">
+          <!-- Brief Summary -->
+          <p class="mt-8 text-gray-600">Given a natural-language scene description, our system decomposes it into independent audio elements—dialogue, effects, ambient, and music—generated by specialized agents and assembled on a structured timeline for coherent, editable audio scenes.</p>
+          <!-- Key Features Grid -->
+          <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="group relative bg-gradient-to-br from-blue-500/5 to-blue-600/10 border border-blue-200/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <div class="absolute -top-4 left-6 w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg">
+                <i data-lucide="workflow" class="w-5 h-5"></i>
+              </div>
+              <div class="pt-4">
+                <h4 class="font-bold text-gray-900 mb-2">Structured Planning</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Decomposes complex scenes into plannable audio elements with explicit timeline representation.</p>
+              </div>
+            </div>
+            <div class="group relative bg-gradient-to-br from-green-500/5 to-green-600/10 border border-green-200/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-green-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <div class="absolute -top-4 left-6 w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center shadow-lg">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <div class="pt-4">
+                <h4 class="font-bold text-gray-900 mb-2">Multi-Agent Collaboration</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Specialized agents handle speech, sound effects, ambient, and music generation independently.</p>
+              </div>
+            </div>
+            <div class="group relative bg-gradient-to-br from-purple-500/5 to-purple-600/10 border border-purple-200/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <div class="absolute -top-4 left-6 w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-lg">
+                <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+              </div>
+              <div class="pt-4">
+                <h4 class="font-bold text-gray-900 mb-2">Fine-grained Editing</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">Supports local regeneration and post-processing without regenerating the entire scene.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demos Section -->
+      <section id="demos" class="max-w-5xl mx-auto px-6 py-16 space-y-24">
+        <div class="text-center space-y-2">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 italic">Audio Samples & Demos</h2>
+          <p class="opacity-50">Experimental results across different prompts.</p>
+        </div>
+
+        <!-- Section 1: Text-to-Audio -->
+        <div class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-grow bg-black/10"></div>
+            <h3 class="text-2xl font-bold text-gray-800">Text-to-Audio</h3>
+            <div class="h-px flex-grow bg-black/10"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A EN 1</h4>
+              <p class="text-xs opacity-50 leading-relaxed">Immersive cyberpunk city alleyway at night: persistent heavy rain hitting metal dumpsters and sizzling on hot neon signs, a sputtering electrical zap from a broken streetlamp, a low-flying hover vehicle roaring past overhead with a distinct Doppler effect, and a distant, muffled synth-bass thrumming from an underground club.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/en_1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A EN 2</h4>
+              <p class="text-xs opacity-50 leading-relaxed">Magical forest soundscape evolving over 30 seconds: starts with a gentle, shimmering wind scattering dry leaves, gradually transitioning into crisp, exotic bird calls echoing through tall trees, accompanied by a fast-flowing, sparkling creek, and underneath it all, a subtle, ethereal, high-frequency hum that feels mystical.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/en_2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A EN 3</h4>
+              <p class="text-xs opacity-50 leading-relaxed">Complex industrial soundscape inside a steampunk engine room: a dominant, rhythmic heavy piston thudding like a heartbeat, intermittent high-pressure steam releases hissing sharply, metallic gears grinding and clicking, the continuous deep roaring rumble of a massive furnace, and a clanging brass bell chiming twice at the very end.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/en_3.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A ZH 1</h4>
+              <p class="text-xs opacity-50 leading-relaxed">暴风雨逼近海边无线电塔的密集声音场景：风穿过金属缆线，远处海浪，雨声从轻到强，一个松动舱门不断撞击，电台静噪声，以及底部持续的低沉不安氛围。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/zh_1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A ZH 2</h4>
+              <p class="text-xs opacity-50 leading-relaxed">极地暴风雪期间脆弱的小木屋内部幽闭的冬季声音场景：冰冷的狂风在屋顶呼啸、发出高频的尖啸声，粗壮的木梁在厚重的积雪下发出嘎吱嘎吱的剧烈断裂声，一块松动的窗玻璃疯狂地摇晃碰撞，以及屋子中央一个小铁炉里安静、形成鲜明对比的柴火噼啪声。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/zh_2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">T2A ZH 3</h4>
+              <p class="text-xs opacity-50 leading-relaxed">雨夜中极速前进的重型蒸汽机车声音图景：巨大的金属活塞往复运动时发出的沉重轰隆声，锅炉内炉火吞噬煤炭的剧烈呼啸，高压蒸汽泄压时发出的震耳欲聋的长鸣，雨点密集地横扫在滚烫金属车壳上的'嗤嗤'声，以及车轮与铁轨接缝处有节奏的、冰冷的撞击声。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/text-to-audio/zh_3.wav"></audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Speech -->
+        <div class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-grow bg-black/10"></div>
+            <h3 class="text-2xl font-bold text-gray-800">Speech</h3>
+            <div class="h-px flex-grow bg-black/10"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech EN 1</h4>
+              <p class="text-xs opacity-50 leading-relaxed">Lena whispers, 'Don't touch the console yet.' Marcus replies, 'If we wait any longer, the whole grid goes dark.' Their voices should feel close, urgent, and restrained, with a low server-room ambience underneath.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech EN 2</h4>
+              <p class="text-xs opacity-50 leading-relaxed">Rain lashes against the tall glass windows of the control tower. Thunder rolls in the distance, radio static cuts in and out, and radar screens beep softly in the background. Nora says quietly, 'Flight 712 just disappeared from the radar.' Elias replies, 'No, it didn't disappear. Someone erased it.' Nora turns toward him. 'That's impossible.' Elias whispers, 'Then explain why the backup log is gone too.'</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech EN 3</h4>
+              <p class="text-xs opacity-50 leading-relaxed">A narrow city street at night, slick with recent rain. Neon signs buzz above small storefronts, distant traffic rolls past the intersection, and a subway rumbles faintly beneath the pavement. Lena whispers, 'Don't turn around yet.' Marcus replies quietly, 'Tell me they're not following us.'</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech3.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech ZH 1</h4>
+              <p class="text-xs opacity-50 leading-relaxed">空荡的地铁站里，隧道深处传来风声，坏掉的日光灯滋滋闪烁，远处有水滴落下。瑞秋低声说：'无线电又收到那段求救了。'欧文：'播放给我听。'一阵沙沙声后，断断续续的人声响起，又很快被杂音吞没。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech_zh1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech ZH 2</h4>
+              <p class="text-xs opacity-50 leading-relaxed">深夜的城市窄街刚下过雨，路面湿亮。小店招牌上的霓虹灯发出轻微嗡鸣，远处路口有车辆驶过，地下隐约传来地铁经过的低沉震动。莉娜低声说：'先别回头。'马库斯压低声音回答：'告诉我他们没跟上来。'</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech_zh2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Speech ZH 3</h4>
+              <p class="text-xs opacity-50 leading-relaxed">狭小的博物馆安保室里，老旧监控屏发出幽幽光亮。空调咔哒作响，摄像头转动时发出轻微机械声，墙上的钟在寂静中滴答作响。诺拉低声说：'三号摄像头刚刚自己动了。'伊莱亚斯回答：'系统不是自动模式。'</p>
+              <audio controls class="w-full h-8"><source src="public/demo/speech/speech_zh3.wav"></audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Complex Audio Scenes -->
+        <div class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-grow bg-black/10"></div>
+            <h3 class="text-2xl font-bold text-gray-800">Complex Audio Scenes</h3>
+            <div class="h-px flex-grow bg-black/10"></div>
+          </div>
+          <div class="space-y-6">
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene EN 1</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">In a narrow back alley behind the night market, rainwater is dripping from the cracked plastic awning above a small noodle stall, landing in uneven puddles with soft, scattered 'plip, plop' sounds. A rusty exhaust fan mounted on the brick wall spins lazily, giving off a tired 'whirr... clack... whirr...' every few seconds. Steam rises from a dented metal soup pot, hissing gently as the old vendor stirs thick broth with a long ladle. The gas stove underneath keeps burning with a low blue 'fwoooosh,' occasionally sputtering when raindrops splash too close to the flame. A young man sits on a plastic stool, his wet jacket squeaking faintly as he shifts his shoulders. He breaks apart a pair of disposable chopsticks with a dry 'snap,' then blows on the steaming noodles in front of him. Across the table, his friend shakes rainwater off an umbrella, sending droplets tapping rapidly onto the concrete floor. The friend laughs and says, 'You dragged me across three blocks in this weather just for a bowl of noodles?' The young man slurps a mouthful loudly, the broth and noodles making a warm 'shrrrp' sound, then replies, 'Not just noodles. This place tastes exactly like the night before we left home.' Behind them, a scooter passes through the alley, its engine buzzing and fading into the rain. The vendor drops a handful of fresh noodles into boiling water, and the pot erupts into a rolling 'blurble-blurble' boil. Metal tongs scrape against the pot rim with a sharp 'clang,' and a ceramic bowl is set down on the counter with a heavy 'tok.' The friend grows quiet for a moment, then says softly, 'Then order one more. We've got time tonight.' Just then, a nearby neon sign flickers violently, buzzing 'bzzzt-bzzzt,' before snapping fully awake in a red glow, lighting up the rain like sparks in the dark alley.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/en_1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene EN 2</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">Before dawn at a small fishing harbor, cold wind sweeps across the dark water, pushing waves against the concrete pier with heavy 'slap... slosh... slap' impacts. Dozens of moored fishing boats tug against their ropes, wooden hulls knocking together with hollow 'thunk, thunk' sounds. Metal hooks swing from a rack beside the pier, clinking softly whenever the wind catches them. A distant buoy bell rings somewhere in the fog, slow and uneven — 'dong... dong...' Under a dim dock lamp, an old fisherman crouches beside a pile of tangled nets. He pulls at the wet rope with both hands, and the net fibers stretch and scrape with a sticky 'shrrrk.' Beside him, a younger man stacks plastic fish crates onto a cart, each crate landing with a hollow 'clack.' The wheels of the cart squeal as he pushes it over the uneven pier. He glances at the black clouds above the water and says, 'The weather report said the storm would turn south.' The old fisherman spits into the sea and replies, 'Weather reports don't know this harbor. The wind changed an hour ago.' A small diesel engine coughs to life on one of the boats: 'chug-chug-chug... CHUG.' Exhaust smoke drifts low over the water. A loose tarp snaps violently in the wind, cracking like a whip. The younger man tightens his hood and says, 'So we're not going out?' The old fisherman pauses, listening to the waves hit the outer breakwater. 'We go out ten minutes late,' he says. 'Not one minute earlier.' Suddenly, a thick rope under tension slips from a rusted cleat. It whips across the pier with a violent 'THWACK,' slamming into a stack of metal buckets and sending them crashing everywhere in a chaotic 'KLANG-KLANG-KLANG.' One boat jerks sideways, its hull scraping hard against the dock. The old fisherman grabs the young man by the sleeve and shouts over the wind, 'Hold the bow line! Now!' Above them, thunder rolls across the harbor in a deep, endless 'grrrrrrr-BOOM,' and every mast begins to rattle like bones in the dark.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/en_2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene EN 3</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">Inside a cramped old bookstore on a stormy evening, rain hammers against the front windows with a dense, restless 'tat-tat-tat-tat.' The wooden sign outside swings in the wind, its rusty chain groaning softly before tapping against the glass with a dull 'tok... tok.' Tall shelves packed with yellowed books lean slightly toward the narrow aisles, and every now and then the building creaks as if taking a deep, tired breath. A small electric heater beneath the counter buzzes weakly, fighting the damp air with a thin 'mmmmmm.' An elderly shopkeeper stands behind the counter, repairing the spine of a torn book with a brush and glue. The brush strokes make faint sticky sounds against the paper, while the pages whisper 'frrrp' whenever he turns them. Near the back of the shop, a student in a soaked hoodie pulls a heavy encyclopedia from a shelf. The book resists for a moment, scraping against its neighbors with a dry 'shhhhk,' then drops into his arms with a heavy 'thud.' The student walks to the counter and places the book down. Dust puffs into the light of a green desk lamp. 'I found the one you told me about,' he says, trying to catch his breath. The old shopkeeper looks up over his glasses and says, 'That book is not for casual reading.' The student lowers his voice. 'I'm not reading casually. The name inside it matches the letter my grandmother left me.' A flash of lightning turns the whole shop white for an instant. The thunder follows almost immediately, rolling over the roof with a deep 'KRAK-BOOOOM.' Several books shift on the shelves. Somewhere behind the wall, a loose pipe rattles violently. The old shopkeeper reaches for the encyclopedia, but before his fingers touch it, the book opens by itself. Its dry pages begin flipping rapidly — 'frrr-frrr-frrr-frrr' — though there is no wind inside the room. The heater cuts out with a tiny 'click,' the lights dim, and from between the pages comes the faint sound of a woman humming an old lullaby.</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/en_3.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene ZH 1</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">宽旷的老旧汽车修理厂里，角落里的空气压缩机正发出沉闷且有节奏的"突突突"运作声，半空中悬挂的老式白炽灯接触不良，偶尔爆出"嗞嗞"的电流微响。一滴粘稠的废机油从高高架起的汽车底盘上坠落，砸在下方的铁皮接油盘里，发出一声清脆的"滴答"。男人躺在修车滑板上，手里用力拧着扳手。突然扳手打滑，沉重的精钢工具猛地磕在排气管上，爆发出"当！"的一声震耳脆响。他伴随着滑板轮子在粗糙水泥地上滚动的"骨碌碌"声滑了出来，抹了一把脸上的黑漆漆的油污长叹道："这辆老福特的底盘螺丝简直像焊死了一样，死磕了一下午，我这腰都快折了。"旁边的同伴正往铁桶里扔废弃的火花塞，细碎的金属块砸在空荡荡的桶底，发出一连串轻快空灵的"叮叮当当"声。他扯过一块沾满油污的碎布擦了擦手，靠着巨大的轮胎笑道："别跟它较劲了，喷点除锈剂先放一晚。明晚去盘山公路跑一圈？我那辆机车的化油器刚调好，跑完咱们去山顶吹吹风，吃那家路边摊的炒河粉去去机油味。"男人撑着地面坐起来，扭动脖子时颈椎发出一声轻微的"咔吧"响。他随手把扳手扔进旁边的红色铁皮工具箱里，砸出一阵响亮且混杂的"哗啦"金属碰撞声。他疲惫的眼神中透出一丝期待，笑着应道："行啊，不过先说好，下山的时候你别又像个疯子一样瞎拧油门，我可不想半夜去绿化带里捞你。明晚八点，老加油站集合。"话音刚落，修理厂深处的检测工位上突然有人猛踩了一脚油门，一阵震耳欲聋的V8引擎轰鸣声——"轰——嗡嗡嗡！"瞬间如野兽咆哮般爆发，暴躁的声浪把架子上的修车工具震得"嗡嗡"作响。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/ch_1.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene ZH 2</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">一家小餐馆打烊前的后厨里，空气中弥漫着蒸汽、蒜香、热油味，还有水槽里潮湿的金属气息。炒锅灶喷出猛烈的蓝色火焰，在发黑的铁锅下方持续发出'呼——'的轰鸣声。热油溅在锅壁上，'滋滋滋'地爆响；旁边的案板上，菜刀快速落下，敲出密集的'哒哒哒哒'节奏。后方的洗碗机一边低沉呻吟，一边喷出一阵阵沉重的水流声。一个围裙沾满油渍的厨师正在翻炒米饭，饭粒撞击锅面，发出干燥沙沙的'唰啦'声。旁边，一个年轻服务员抱着一摞陶瓷碗，每只碗都不安地互相轻碰，'叮叮'作响。服务员看向前厅，说：'七号桌问厨房还开不开。'厨师停了半秒，然后头也不抬地笑了一声：'告诉七号桌，厨房关了，除非他们是来洗碗的。'金属点菜单打印机突然'滋滋滋'地响了起来，又吐出一张新订单。厨师一把扯下纸条，眯眼看了看，然后呻吟道：'三份炒面，两碗饺子汤，一份特辣牛肉。'服务员无奈地笑了：'所以……厨房还是关了吗？'厨师把蒜末扔进锅里，炒锅顿时爆出一阵尖锐浓香的滋啦声。'情感上关了。'他说，'技术上还没有。'就在这时，炉灶上方那台老旧抽油烟机突然剧烈咳嗽起来。电机卡顿着发出'呃呃……咔'的声音，随后猛地冲成一阵深沉的金属轰鸣。架子上一只松动的托盘被震得一点点滑向边缘。服务员伸手去抓，但已经太晚。托盘掉下来，砸进一堆锅里，整个后厨瞬间爆发出灾难般的'哐啷——砰——叮当'巨响。厨师僵在原地，随后用锅铲指着服务员说：'现在你肯定要洗碗了。'</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/ch_2.wav"></audio>
+            </div>
+            <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <h4 class="font-bold text-gray-900">Scene ZH 3</h4>
+              <p class="text-sm text-gray-700 leading-relaxed">暴雨中的山间小庙里，雨水从弯曲的屋瓦上成股流下，不停砸在石阶上，发出连续的'哗——'声。院子四周的竹林被风雨压弯，竹叶彼此摩擦，掀起一阵阵不安的沙响。正殿内，古旧神像前的香缓慢燃烧，香头偶尔轻轻噼啪。门口附近悬着的一口铜钟，每当风钻进门缝，便微微摇晃，发出低而柔和的'咚'声。一个年轻旅人跪坐在门边，拧着湿透的袖子。水滴落在木地板上，发出轻轻的'啪、啪、啪'声。一位老和尚坐在小火盆旁，用铁钳拨动炭块。炭火干涩地'咔啦'移动，橙色火星短暂升入潮湿空气中。旅人发着抖说：'我以为下山的路还没封。'和尚把热茶倒进一只裂纹陶杯里，回答：'山想关的时候，自己就会关。'雷声在云层后方滚动。庙里的灯笼轻轻摇晃，让神像的影子在墙上缓慢移动。旅人双手接过茶杯，陶瓷杯沿碰到他冰冷的手指，发出轻轻的'嗒'声。他问：'这里经常有人迷路吗？'和尚看向被雨染黑的院子，说：'只有那些听见钟声之后还继续走的人。'就在这时，门口那口铜钟自己响了一下。'咚。'和尚悬在火盆上方的手停住了。外面，隔着雨帘，石阶小路上传来脚步声——缓慢、潮湿，而且刻意。'哗……踏……哗……踏……'旅人转头看向门口。一阵突如其来的风穿过正殿，'噗'地同时吹灭了两支蜡烛。铜钟再次响起，这一次更响，而在风雨深处，有什么东西在庙门上敲了三下。</p>
+              <audio controls class="w-full h-8"><source src="public/demo/complex-audio-scenes/ch_3.wav"></audio>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Section -->
+      <section id="comparisons" class="bg-white/50 border-y border-black/5 py-16">
+        <div class="max-w-5xl mx-auto px-6 space-y-12">
+          <div class="text-center space-y-2">
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Model Comparisons</h2>
+            <p class="opacity-50">Comparing our model against baselines.</p>
+          </div>
+
+          <!-- TTS Comparison -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-bold text-gray-800">Speech</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="border-b border-black/10 text-left text-gray-400">
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase">Prompt</th>
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase">Ming-Omni-TTS</th>
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase font-bold text-blue-600">Ours</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                  <tr class="border-b border-black/5 hover:bg-black/[0.01] transition-colors">
+                    <td class="py-8 px-6 align-top max-w-[300px]">
+                      <p class="text-sm font-medium italic">"speaker_1: 所以你想成功的话，就推荐你看这些书。speaker_2: 我会有时间去看一看的。speaker_1: 要是像我看的话，我就会感觉特别的。speaker_2: 枯燥。speaker_1: 对枯燥无聊毕竟是古文也看不懂除非那些。"</p>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8 opacity-80"><source src="public/comparison/tts/ming-omni-tts-1.wav"></audio>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8"><source src="public/comparison/tts/ours-tts-1.wav"></audio>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-black/5 hover:bg-black/[0.01] transition-colors">
+                    <td class="py-8 px-6 align-top max-w-[300px]">
+                      <p class="text-sm font-medium italic">"speaker_1: 知道家长在考虑什么让家长也知道孩子们在考虑什么。speaker_2: 对。speaker_1: 减少矛盾。speaker_2: 对，就是感觉其实出这些电影或者电视剧，也是挺好的让彼此更加了解一下，我感觉如果是一个家长和一个小孩儿，去看电视剧的话，收获也是蛮多的。speaker_1: 那你还有什么比较好的电影介绍给我呢。"</p>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8 opacity-80"><source src="public/comparison/tts/ming-omni-tts-2.wav"></audio>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8"><source src="public/comparison/tts/ours-tts-2.wav"></audio>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TTA Comparison -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-bold text-gray-800">Text-to-Audio</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="border-b border-black/10 text-left text-gray-400">
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase">Prompt</th>
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase">Stable Audio</th>
+                    <th class="py-4 px-6 font-mono text-[10px] uppercase font-bold text-blue-600">Ours</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                  <tr class="border-b border-black/5 hover:bg-black/[0.01] transition-colors">
+                    <td class="py-8 px-6 align-top max-w-[300px]">
+                      <p class="text-sm font-medium italic">"雨夜中极速前进的重型蒸汽机车声音图景：巨大的金属活塞往复运动时发出的沉重轰隆声，锅炉内炉火吞噬煤炭的剧烈呼啸，高压蒸汽泄压时发出的震耳欲聋的长鸣，雨点密集地横扫在滚烫金属车壳上的'嗤嗤'声，以及车轮与铁轨接缝处有节奏的、冰冷的撞击声。"</p>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8 opacity-80"><source src="public/comparison/tta/stable-audio-1.wav"></audio>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8"><source src="public/comparison/tta/ours-1.wav"></audio>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-black/5 hover:bg-black/[0.01] transition-colors">
+                    <td class="py-8 px-6 align-top max-w-[300px]">
+                      <p class="text-sm font-medium italic">"暴风雨逼近海边无线电塔的密集声音场景：风穿过金属缆线，远处海浪，雨声从轻到强，一个松动舱门不断撞击，电台静噪声，以及底部持续的低沉不安氛围。"</p>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8 opacity-80"><source src="public/comparison/tta/stable-audio-2.wav"></audio>
+                    </td>
+                    <td class="py-8 px-6 min-w-[180px]">
+                      <audio controls class="w-full h-8"><source src="public/comparison/tta/ours-2.wav"></audio>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- AudioScene Comparison -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-bold text-gray-800">Audio Scene</h3>
+            <div class="space-y-4">
+
+              <!-- Scene 1 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 1</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">An energetic electronic house track with crisp hi-hats, a driving snare/clap, and bright synth layers kicks in immediately, establishing a lively, modern atmosphere.</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-1.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-1.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-1.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">An energetic electronic house track with crisp hi-hats, a driving snare/clap, and bright synth layers kicks in immediately, establishing a lively, modern atmosphere. Over this steady musical bed, an enthusiastic male narrator with a clear British RP accent launches straight into the story, saying, &quot;to seven chassis, the Dutch company is famous for producing insane roadsters with ludicrous power and barely any weight.&quot; The music maintains a consistent volume underneath his voice as he continues, &quot;The D8 GTO uses a two and a half liter five cylinder TFSI engine from Audi, specially tuned to achieve three hundred and forty to three hundred and eighty horsepower.&quot; He explains further without pause, &quot;This standard engine is used all over Audi&#39;s model range. Due to the fact it is relatively small and turbocharged, it is easily tunable, and this is exactly why Donkervoort uses it.&quot; The narration remains dry and centered, with no ambient car noises or reverb, keeping the focus entirely on the voice and the rhythmic background track. After a brief breath marked by a minimalist visual cue, the narrator shifts tone slightly to address the audience directly: &quot;So there you are. Can you think of any other hero cars with humble engines? Let me know in the comments below and don&#39;t forget to like or dislike the video.&quot; As soon as he finishes the word &quot;video,&quot; the music cuts out abruptly, replaced by a single, sharp cinematic sound of a car door slamming shut—a solid &quot;thunk&quot; that serves as a definitive full stop to the segment.</p>
+                </div>
+              </div>
+              <!-- Scene 2 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 2</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">A quiet outdoor ambience hums with a faint, low-level electronic hiss as the scene opens on the water.</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-2.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-2.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-2.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">A quiet outdoor ambience hums with a faint, low-level electronic hiss as the scene opens on the water. The sharp, rhythmic clicking of a fishing reel cuts through the stillness, accompanied by the soft splash of water being disturbed. A man&#39;s voice, close and breathy with excitement, says, &quot;There he is,&quot; followed quickly by, &quot;Got him that time.&quot; Wet thuds and gentle splashing continue as the fish struggles near the surface, the reel&#39;s mechanical whir persisting underneath. The man speaks softly to his catch, &quot;Come here buddy,&quot; his tone warm and satisfied. As the action settles, the reel falls silent and the water calms, coming with an enthusiastic music based on electronic guitar, bass and drums. The man shifts into a concluding tone, announcing, &quot;Well, that is gonna wrap it up for me today.&quot; A distinct plastic clack sounds as he handles his gear, perhaps closing a tackle box or setting down equipment. Without pause, he transitions into a promotional message: &quot;Be sure to check out Two More Cast Tackle Box, top link in the video description.&quot; His voice remains clear and steady over the quiet background hiss. He adds, &quot;Bobber fishing is a fun tactic this time of year,&quot; then observes, &quot;It&#39;s another female, white belly, a little bit bigger belly,&quot; describing the fish he holds. Just as he begins another sentence—&quot;Well that is gonna…&quot;—the audio cuts off abruptly, leaving only the faint ambient hiss for a split second before silence.</p>
+                </div>
+              </div>
+              <!-- Scene 3 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 3</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">A steady, retro electronic loop kicks in immediately, driven by crisp hi-hats ticking in eighth notes and a snare snapping on beats two and four, all wrapped in a bright major-key harmony that plays without interruption.</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-3.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-3.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-3.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">A steady, retro electronic loop kicks in immediately, driven by crisp hi-hats ticking in eighth notes and a snare snapping on beats two and four, all wrapped in a bright major-key harmony that plays without interruption. Over this energetic bed, a young adult male voice speaks rapidly and clearly, his tone neutral and informative, saying, &quot;This is the rarest object in the back rooms, and it&#39;s also the most powerful. It&#39;s object number 66, or the Leviathan&#39;s Tooth, as it&#39;s been nicknamed. The object was originally a full clay tablet that was 29 by 29 inches in size. Over the years it&#39;s been broken and smashed more, so it&#39;s not that big.&quot; The music maintains its constant volume and rhythm underneath, never dipping or swelling, as he continues, &quot;It was discovered in 2003, and it&#39;s said that any person who touches this object will instantly gain the power it possesses, and all the knowledge that it&#39;s said to have. As I just said, the tablet&#39;s been broken so it&#39;s less powerful now, but its original purpose was apparently to transport people instantly from the back rooms to reality using the law of equivalent exchange, meaning a soul—&quot; The sentence cuts off abruptly mid-word, and the music stops dead at the exact same moment, plunging the scene into total silence with no trailing reverb or fade.</p>
+                </div>
+              </div>
+              <!-- Scene 4 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 4</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">初始时，一座老旧体育馆内充斥着篮球拍打地板的咚、咚、咚的有力回响，伴随着球鞋摩擦地面的尖锐吱吱声。</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-4.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-4.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-4.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">初始时，一座老旧体育馆内充斥着篮球拍打地板的咚、咚、咚的有力回响，伴随着球鞋摩擦地面的尖锐吱吱声。一群少年的呼喊声交织：&quot;这里！&quot;&quot;传！&quot;背景里，通风系统低沉的嗡嗡声如影随形。一名教练吹响哨子，尖锐的哨音划破空气，所有人瞬间安静，只有篮球滚动和喘息声。教练高声说：&quot;暂停！你们看看自己的防守！&quot;说话间，他用力拍手，发出清脆的啪声。球员们围拢过来，脚步声杂乱，水瓶被拧开的咕噜声和喝水声响起。他接着说：&quot;第二节还剩三分钟，注意力集中！&quot;话音未落，广播里传出一段激昂的摇滚乐前奏，电子吉他声骤然响起，试图调动气氛。但教练示意关掉音乐，做出一个下压手势，音乐戛然而止，只留下尾音微微回荡。他指着球场说：&quot;盯紧9号。&quot;球员们散开，球鞋声再次密集起来。一名队员运球，球撞击地面的节奏加快，然后他跳投，球鞋落地一声闷响，篮球划过空气的嗖嗖声后，砸在篮筐上发出哐当一声，弹飞出去，落在远处地板上连续弹跳几下。观众席上有零星的掌声和口哨声。教练吼道：&quot;篮板！！&quot;场边有人按下计时器，发出清脆的滴滴声。短暂的停顿后，裁判的哨音再次响起，比赛继续。球鞋声、呼喊声、拍球声重新交织成一片混乱而充满活力的声浪，直到广播里传来电子蜂鸣声，第一节结束的提示音尖锐地回荡在整个场馆。所有人动作放缓，喘息声和脚步声渐次减弱。</p>
+                </div>
+              </div>
+              <!-- Scene 5 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 5</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">从节目一开始，一段轻柔而略带复古感的钢琴垫乐便缓缓渗入空间，营造出一种深夜电台的氛围，并贯穿始终。</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-5.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-5.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-5.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">从节目一开始，一段轻柔而略带复古感的钢琴垫乐便缓缓渗入空间，营造出一种深夜电台的氛围，并贯穿始终。主播的声音沉稳而富有磁性，他缓缓开口道：&quot;欢迎收听《深夜回声》，我是你们的老朋友，林深。&quot;话音落下后，他轻轻翻动纸张，发出一阵细碎的沙沙声，像是在整理一叠旧信。他随即念道：&quot;今晚的第一封信，来自一位署名&#39;微光&#39;的听众……&quot;读信过程中，他的声音里带着一丝不易察觉的哽咽，背景的钢琴音始终低回盘旋，如同月光般铺满整个房间。当他说到&quot;她说，她最后一次见到他，是在三年前的雨夜&quot;时，窗外适时传来一声遥远的雷鸣，沉闷而悠长，仿佛为这段话做了注脚。短暂的停顿间，他轻啜了一口茶水，传来一声清晰的吞咽声。他继续说道：&quot;于是她学会了在雨中散步，在所有能听见水声的地方寻找他的影子。&quot;话音刚落，一阵细密的雨声从远及近地漫过整个空间，持续了大约七八秒，逐渐与钢琴融为一体。他放下杯子，指尖在桌面轻点两下，发出笃笃的声响，随后语气一转：&quot;但时间终究是一味良药，对吗？昨天，她又寄来了一封信，说她已经搬去了海边。&quot;随着他念出新信内容，背景音中隐隐加入了海浪潮汐的沙沙声，轻柔而舒缓，像是从远方渐渐靠近。他念道：&quot;她说，这里的风很咸，但很自由。&quot;话音未落，音频中的钢琴声突然被一阵信号干扰的杂音打断，短暂刺耳后，一切恢复平静。主播轻笑一声，语气带着歉意：&quot;抱歉，录音设备有点老化了。&quot;之后，他沉默了两秒，背景随即只剩下雨声和微弱的海浪声交织在一起。他缓缓开口，声音低得仿佛自言自语：&quot;那么，今晚的节目，就在这里和大家告别吧。&quot;他说完&quot;晚安&quot;二字后的瞬间，所有声音——钢琴、雨声、海浪、信号杂音——全部同时截断，留下一片彻底的寂静。</p>
+                </div>
+              </div>
+              <!-- Scene 6 -->
+              <div class="bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer" onclick="this.classList.toggle('expanded')">
+                <div class="p-6 space-y-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="font-bold text-gray-900">Scene 6</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <span class="text-xs text-gray-400">Expand to see full prompt</span>
+                      <i data-lucide="chevron-down" class="w-4 h-4 opacity-40 transition-transform"></i>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 italic">暴雨的雨水砸在铁皮屋顶上，发出密集的噼啪声，夹杂着偶尔的雷鸣低吼。</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">Any2Speech</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/any2speech-6.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2">WavJourney</p>
+                      <audio controls class="w-full h-8 opacity-80" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/wavjourney-6.wav"></audio>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-400 mb-2 font-bold text-blue-600">Ours</p>
+                      <audio controls class="w-full h-8" onclick="event.stopPropagation()"><source src="public/comparison/audio scene/ours-audio-scene-6.wav"></audio>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-prompt px-6 pb-6 border-t border-black/5 pt-4">
+                  <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">暴雨的雨水砸在铁皮屋顶上，发出密集的噼啪声，夹杂着偶尔的雷鸣低吼。记者站在檐下，声音被雨声压得时断时续：&quot;我们正在被洪水围困的村庄外围，水位还在上涨。&quot;话音未落，远处传来一声巨大的树干断裂声，随后是哗啦的水声。一位村民焦急地喊道：&quot;快！那边的堤坝要垮了！&quot;紧接着，众人沉重的跑步声混杂在雨幕中，有人吹响哨子。记者提高音量：&quot;都在组织撤离，但道路已经泥泞不堪。&quot;话音刚落，一阵狂风吹过，雨声瞬间加剧，屋顶的金属板被吹得哐当作响。风声和雨声融为一体，人声在其中显得渺小而顽强。记者喘息着说：&quot;我们只能等待救援队——&quot;话音被一声巨大的雷鸣截断，音频在此刻戛然而止。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-12 border-t border-black/5 text-center text-xs opacity-40">
+      <p>© 2026 Audio-Oscar Team.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
