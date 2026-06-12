@@ -1,0 +1,36 @@
+body {
+  background-color: #F8F9FA;
+  color: #1A1A1B;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+p { line-height: 1.6; }
+
+/* Expandable card animations */
+.bg-white.expanded {
+  background: linear-gradient(to bottom, rgba(37, 99, 235, 0.03), transparent);
+}
+
+.bg-white.expanded .hidden-prompt {
+  display: block;
+  animation: expandIn 0.3s ease-out;
+}
+
+.bg-white.expanded i[data-lucide="chevron-down"] {
+  transform: rotate(180deg);
+}
+
+.hidden-prompt {
+  display: none;
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
